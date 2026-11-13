@@ -157,3 +157,15 @@ label { display: block; font-size: .875rem; color: var(--muted); margin-bottom: 
 .day.p2 { background: #d4e2d7; }
 .day.p3 { background: #bfd9c8; }
 .day.p4 { background: #a9cfb7; }
+
+/* Export do kalendáře */
+.export { position: relative; }
+.export summary { list-style: none; padding: 7px 10px; }
+.export summary::-webkit-details-marker { display: none; }
+.export-menu {
+  position: absolute; right: 0; top: calc(100% + 4px); z-index: 20; background: var(--card);
+  border: 1px solid var(--line); border-radius: 12px; box-shadow: var(--shadow); padding: 6px;
+  display: flex; flex-direction: column; gap: 4px; min-width: 240px;
+}
+.export-menu .btn, .export-menu button { border-color: transparent; justify-content: flex-start; width: 100%; }
+.export-menu .btn:hover, .export-menu button:hover { background: rgba(0, 0, 0, .04); }

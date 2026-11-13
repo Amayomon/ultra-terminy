@@ -5,6 +5,7 @@ import { daysWord, eventDays, formatDay, formatRange, holidayName, todayISO } fr
 import { buildLookup, dayStats, rankCandidates, type Candidate } from '@/lib/scoring';
 import { notify } from '@/lib/notify';
 import { Calendar } from '../Calendar';
+import { ExportButton } from './ExportButton';
 import type { Ctx } from './types';
 
 export function Results({ ctx }: { ctx: Ctx }) {
@@ -103,6 +104,8 @@ export function Results({ ctx }: { ctx: Ctx }) {
                       {c.no.length > 0 && <>nemůže: {c.no.map(name).join(', ')}</>}
                     </div>
                   </div>
+                  <ExportButton eventId={ev.id} title={ev.title} start={c.start} end={c.end}
+                    confirmed={isConfirmed} description={ev.description} />
                   {isOwner && !isConfirmed && (
                     <button onClick={() => confirm(c)} disabled={busy}>Potvrdit</button>
                   )}
@@ -133,6 +136,8 @@ export function Results({ ctx }: { ctx: Ctx }) {
             <div className="spread">
               <strong>{formatDay(sel)}</strong>
               <div className="row">
+                <ExportButton eventId={ev.id} title={ev.title} start={sel} end={sel}
+                  confirmed={ev.confirmed_start === sel && ev.confirmed_end === sel} description={ev.description} />
                 {isOwner && ev.min_days <= 1 && (
                   <button onClick={() => {
                     const s = dayStats(sel, members, lookup);

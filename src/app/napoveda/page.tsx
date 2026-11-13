@@ -52,6 +52,7 @@ export default function Help() {
         <h2>Výsledky</h2>
         <p>Nahoře je seznam <strong>nejlepších termínů</strong>. Nejdřív dny, kdy můžou všichni, pak dny, kdy nikdo neřekl „nemůžu“ (jen někdo „šlo by to“), pak podle toho, kolik lidí může.</p>
         <p>Pod tím je <strong>kalendář pro všechny</strong>. Zelená = můžou všichni, žlutá = všichni, ale někdo jen „šlo by to“, odstíny šedozelené = část lidí. Číslo „4/6“ znamená, že můžou 4 ze 6. Klikni na den a uvidíš, kdo může a jaké má poznámky.</p>
+        <p>Tlačítkem <strong>📅</strong> u termínu (nebo v detailu dne) si ho rovnou přidáš do kalendáře. Dokud není potvrzený, uloží se s poznámkou „předběžně“.</p>
         <p style={{ margin: 0 }}>Nahoře taky vidíš, kdo ještě nevyplnil. Dokud nevyplní všichni, výsledky nejsou úplné.</p>
       </section>
 
