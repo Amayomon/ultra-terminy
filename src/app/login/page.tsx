@@ -56,7 +56,8 @@ function LoginInner() {
         <h1>Přihlášení</h1>
         {!sent ? (
           <form onSubmit={send} className="stack">
-            <p className="muted">Pošleme ti na e-mail odkaz pro přihlášení. Žádné heslo.</p>
+            <p>Tady se domlouváme na společných bězích. Každý naklikne dny, kdy může, a appka najde termín, který sedí všem.</p>
+            <p className="muted">Pošleme ti na e-mail odkaz a kód pro přihlášení. Žádné heslo. <a href="/napoveda">Jak to funguje?</a></p>
             <div className="field">
               <label htmlFor="email">E-mail</label>
               <input id="email" type="email" required autoComplete="email" value={email}

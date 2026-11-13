@@ -20,17 +20,20 @@ export function TopBar() {
       <Link href="/" className="brand">
         <Logo /> Ultra termíny
       </Link>
-      {user && (
-        <button
-          className="ghost small"
-          onClick={async () => {
-            await sb().auth.signOut();
-            window.location.href = '/login';
-          }}
-        >
-          Odhlásit
-        </button>
-      )}
+      <nav className="row" style={{ gap: 2 }}>
+        <Link href="/napoveda" className="btn ghost small">Nápověda</Link>
+        {user && (
+          <button
+            className="ghost small"
+            onClick={async () => {
+              await sb().auth.signOut();
+              window.location.href = '/login';
+            }}
+          >
+            Odhlásit
+          </button>
+        )}
+      </nav>
     </header>
   );
 }

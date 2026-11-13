@@ -12,6 +12,7 @@ import { Routes } from '@/components/event/Routes';
 import { People } from '@/components/event/People';
 import { Settings } from '@/components/event/Settings';
 import { ConfirmedBanner } from '@/components/event/ConfirmedBanner';
+import { WelcomeCard } from '@/components/event/WelcomeCard';
 
 type Tab = 'mine' | 'results' | 'routes' | 'people' | 'settings';
 
@@ -113,6 +114,8 @@ export default function EventPage() {
       {data.event.description && <p className="muted" style={{ whiteSpace: 'pre-line' }}>{data.event.description}</p>}
 
       <ConfirmedBanner ctx={ctx} />
+
+      <WelcomeCard show={!data.members.find((m) => m.user_id === user.id)?.filled_at} />
 
       <nav className="tabs">
         {tabs.map(([k, label]) => (
